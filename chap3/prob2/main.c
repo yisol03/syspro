@@ -8,24 +8,26 @@ void copy(char from[], char to[]);
 
 int main()
 {
-   int len[5], max = 0;
+	int len, max = 0;
+	char str[MAXLINE][MAXLINE];
+	char temp[MAXLINE];
+	
+	for(int i=0; i<5; i++)
+		scanf("%s", str[i]);
 
-   for(int i=0; i<5; i++){
-	  fgets(line,MAXLINE,stdin);
-      len[i] = strlen(line);
-      if (len[i] > max) {
-         max = len[i];
-         copy(line, longest);
-      }
-   }
-
-   for(int i=0; i<5; i++){
-	   if (max > 0)
-		   printf("%s", longest);
+	for(int i=0; i<5; i++){
+		for(int j=0; j<5-i; j++){
+			if(strlen(str[j]) > strlen(str[j+1])){
+				strcpy(temp, str[j]);
+				strcpy(str[j], str[j+1]);
+				strcpy(str[j+1], temp);
+			}
+		}
 	}
 
+   for(int i=0; i<6; i++){
+	   printf("%s\n", str[i]);
+	}
 
    return 0;
 }
-
-
