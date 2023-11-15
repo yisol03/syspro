@@ -1,0 +1,25 @@
+1. ls -sl test.txt
+0 -rw-r--r-- 1 dcuuser dcuuser 0 Nov 15 01:27 test.txt
+
+2. stat test.txt
+  File: test.txt
+  Size: 0               Blocks: 0          IO Block: 4096   regular empty file
+Device: 810h/2064d      Inode: 536965171   Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 1000/ dcuuser)   Gid: ( 1000/ dcuuser)
+Access: 2023-11-15 01:27:15.151419742 +0000
+Modify: 2023-11-15 01:27:15.151419742 +0000
+Change: 2023-11-15 01:27:15.151419742 +0000
+ Birth: -
+
+3. ls -i
+536965171 test.txt
+
+4. touch
+before touch
+total 4
+-rw-r--r-- 1 dcuuser dcuuser 495 Nov 15 01:29 main.txt
+-rw-r--r-- 1 dcuuser dcuuser   0 Nov 15 01:27 test.txt
+after touch
+total 4
+-rw-r--r-- 1 dcuuser dcuuser 495 Nov 15 01:29 main.txt
+-rw-r--r-- 1 dcuuser dcuuser   0 Nov 15 01:29 test.txt
